@@ -73,10 +73,7 @@ impl Clouds {
 #[derive(Debug, Deserialize)]
 #[allow(dead_code)]
 pub struct Sys {
-    #[serde(rename = "type")]
-    sys_type: u32,
-    id: u32,
-    country: String,
+    pub country: String,
     pub sunrise: u64,
     pub sunset: u64,
 }
@@ -114,13 +111,15 @@ pub async fn get_weather(
         ))
         .headers(headers)
         .send()
-        .await?
-        .text()
         .await?;
 
-    let weather_response: WeatherResponse = serde_json::from_str(&res)?;
-
-    Ok(weather_response)
+    if res.status().is_success() {
+        let body = res.text().await?;
+        let weather_response: WeatherResponse = serde_json::from_str(&body)?;
+        Ok(weather_response)
+    } else {
+        Err(format!("Request failed with status code: {}", res.status()).into())
+    }
 }
 
 pub fn get_random_city() -> (&'static str, &'static str, &'static str) {

@@ -5,7 +5,7 @@ use dotenv::dotenv;
 use poise::serenity_prelude as serenity;
 use poise::Context as PoiseContext;
 use reqwest::Client;
-//use serde::Deserialize;
+use serde::Deserialize;
 use serenity::async_trait;
 use serenity::client::{Context as SContext, EventHandler};
 use serenity::model::gateway::Ready;
@@ -77,7 +77,7 @@ async fn weather(
             // Send formatted response to Discord
             ctx.say(response).await?;
         }
-        Err(_) => {
+        Err(e) => {
             let response = format!("The city '{}' doesn't exist or couldn't be found.", city);
             // Send error response here
             ctx.say(response).await?;
