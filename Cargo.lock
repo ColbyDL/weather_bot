@@ -1272,6 +1272,7 @@ dependencies = [
  "localzone",
  "openai",
  "poise",
+ "rand",
  "reqwest 0.12.4",
  "serde",
  "serde_json",
