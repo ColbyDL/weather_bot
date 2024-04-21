@@ -5,23 +5,24 @@ use dotenv::dotenv;
 use poise::serenity_prelude as serenity;
 use poise::Context as PoiseContext;
 use reqwest::Client;
-use serde::Deserialize;
+//use serde::Deserialize;
 use serenity::async_trait;
 use serenity::client::{Context as SContext, EventHandler};
 use serenity::model::gateway::Ready;
 mod chatbot;
 mod weather;
-use chrono::prelude::*;
-use chrono::{DateTime, Local, NaiveDateTime, TimeZone, Utc};
-use substring::Substring;
-use tokio;
+//use chrono::prelude::*;
+//use chrono::NaiveDateTime;
+use chrono::{DateTime, Local, TimeZone, Utc};
+//use substring::Substring;
+//use tokio;
 use weather::get_weather;
 
 //shuttle_runtime
 
 use anyhow::Context as _;
 use poise::serenity_prelude::{ClientBuilder, GatewayIntents};
-use shuttle_runtime::SecretStore;
+//use shuttle_runtime::SecretStore;
 use shuttle_serenity::ShuttleSerenity;
 
 // Boilerplate from Poise docs
