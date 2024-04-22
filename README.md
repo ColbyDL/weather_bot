@@ -1,16 +1,31 @@
-# Poise Hello World Bot with Shuttle
+### Weather Bot for Discord 
 
-In this example we will deploy a Poise/Serenity bot with Shuttle that responds to the `/hello` command with `world!`. To run this bot we need a valid Discord Token. To get started log in to the [Discord developer portal](https://discord.com/developers/applications).
+The weather bot is designed to be used on the application Discord which can be used either in the Discord Desktop app or on the browser. 
 
-1. Click the New Application button, name your application and click Create.
-2. Navigate to the Bot tab in the lefthand menu, and add a new bot.
-3. On the bot page click the Reset Token button to reveal your token. Put this token in your `Secrets.toml`. It's very important that you don't reveal your token to anyone, as it can be abused. Create a `.gitignore` file to omit your `Secrets.toml` from version control.
-4. For the sake of this example, you also need to scroll down on the bot page to the Message Content Intent section and enable that option.
+##### Steps to use the bot: 
 
-To add the bot to a server we need to create an invite link.
+  - Open your discord application and login to your account. 
+    - If you do not have an account, you can register at [Discord](https://discord.com/register) 
+  - Choose the server you would like to add the bot to. 
+    - If you do not have a server, you can create one by clicking the '+' sign on the left side bar. 
+  - Click on the link below to add the bot to your server. 
+    - [Add Weather Bot](https://discord.com/channels/1204218600911671326/1204218600911671331/1231354740445675540)
+  - Once the bot is in the server, you can use the following commands: 
+    - /weather <city> 
+      - This command will return the current weather of the city you input. 
+    - /temp <city> 
+      - This command will return the current temperature of the city you input in different units of measurement. 
+    - /sun <city> 
+      - This command will return the sunrise and sunset times of the city you input. 
+    - /wind <city> 
+      - This command will return the wind speed of the city you input. 
+    - /clouds <city> 
+      - This command will return the cloud coverage of the city you input. 
+    - /weatherfact <city> 
+      - This command will return a random weather fact based on the city you input. 
+    - /weather_joke  
+      - This command will return a weather joke. 
 
-1. On your bot's application page, open the OAuth2 page via the lefthand panel.
-2. Go to the URL Generator via the lefthand panel, and select the `bot` scope as well as the `Send Messages` permission in the Bot Permissions section.
-3. Copy the URL, open it in your browser and select a Discord server you wish to invite the bot to.
+The slash within the command is necessary as the prefix to use the bot. 
 
-For more information please refer to the [Discord docs](https://discord.com/developers/docs/getting-started) as well as the [Poise docs](https://docs.rs/poise) for more examples.
+The Bot is currently being verified by the website [top.gg](https://top.gg). Once Verified, the bot will be easily accessible to any use within Discord by downloading directly from the webisite. 
