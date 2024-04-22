@@ -358,7 +358,7 @@ async fn distance(
                     let distance = haversine_distance(coord1, coord2, coord3, coord4);
                     let miles = distance * 0.621371;
                     let _response = format!(
-                        "The distance between {} and {} is {:.2} kilometers, and {:.2} miles.",
+                        "The distance between {} and {} is {:.2} kilometers or {:.2} miles.",
                         city1, city2, distance, miles,
                     );
 
